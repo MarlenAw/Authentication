@@ -1,0 +1,22 @@
+{
+  "name": "authentication-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "nodemon": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.3"
+  }
+}
