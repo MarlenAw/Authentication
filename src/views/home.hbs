@@ -1,3 +1,18 @@
 {{> head}}
-  <h1>Testing home page</h1>
+
+<div class="home-container">
+  <form class="login-form" action="index.html" method="post">
+    <h1 class="header-login">Let Me In</h1>
+
+    <input class="login-input" type="text" name="username" placeholder="Username" required autofocus>
+    <input class="login-input" type="password" name="password" placeholder="Password" required autofocus>
+
+    <label class="checkbox">
+      <input type="checkbox" name="rememberMe"> Remember Me
+    </label>
+
+    <button class="submit" type="submit" name="submit">Login</button>
+  </form>
+</div>
+
 {{> footer}}

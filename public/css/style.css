@@ -1,3 +1,44 @@
-h1{
-  color: blue;
+.home-container{
+  width: 50%;
+  margin: 5em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form{
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.header-login{
+  text-align: center;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  color: #008080;
+}
+.login-input{
+  font-size: 1em;
+  height: auto;
+  padding: 0.813em;
+}
+.checkbox{
+  color: #708090;
+  font-weight: bold;
+}
+.login-input, .submit, .checkbox{
+  display: block;
+  margin: 0.813em;
+}
+.submit {
+    width: 6em;
+    height: 3em;
+    color: #fff;
+    background-color: #008080;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.submit:hover{
+  box-shadow: 0 0.813em 1em 0 rgba(0,0,0,0.24),0 1em 5em 0 rgba(0,0,0,0.19);
 }
