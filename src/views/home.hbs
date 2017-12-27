@@ -1,18 +1,36 @@
 {{> head}}
+<div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">{{title}}</h3>
+			 			</div>
+			 			<div class="panel-body">
 
-<div class="home-container">
-  <form class="login-form" action="" method="post">
-    <h1 class="header-login">Let Me In</h1>
+			    		<form action="" method="post">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" name="username" class="form-control input-sm" placeholder="Username">
+			    					</div>
+			    				</div>
+			    			</div>
 
-    <input class="login-input" type="text" name="username" placeholder="Username" required autofocus>
-    <input class="login-input" type="password" name="password" placeholder="Password" required autofocus>
+			    			<div class="form-group">
+			    				<input type="email" name="email" class="form-control input-sm" placeholder="Email Address">
+			    			</div>
 
-    <label class="checkbox">
-      <input type="checkbox" name="rememberMe"> Remember Me
-    </label>
+                <div class="class="form-group"">
+                  <input type="checkbox" name="rememberMe"> Remember Me
+                </div>
 
-    <button class="submit" type="submit" name="submit">Login</button>
-  </form>
-</div>
+			    			<input type="submit" value="Login" class="btn btn-info btn-block">
 
+			    		</form>
+			    	</div> <!--panel-body-->
+	    		</div> <!--panel-default-->
+    		</div> <!--col-xs.....-->
+    	</div> <!--row centered-form-->
+    </div>  <!--END OF CONTAINER-->
 {{> footer}}
