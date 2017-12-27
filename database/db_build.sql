@@ -4,13 +4,13 @@ DROP TABLE IF EXISTS users cascade;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(40) NOT NULL,
+  username VARCHAR(15) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  password VARCHAR(100) NOT NULL
+  password VARCHAR(64) NOT NULL
 );
 
 
-INSERT INTO users (name, email, password)
+INSERT INTO users (username, email, password)
 VALUES ('marlen', 'marlen@marlen.com', '1234');
 
 
