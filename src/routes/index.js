@@ -6,4 +6,11 @@ router.get('/', (req, res, next) => {
   res.render('home', {title: 'Login'});
 });
 
+router.get('/registration', (req, res, next) => {
+  res.render('register', {title: 'Create an Account'});
+});
+
+router.post('/register', (req, res, next) => {
+  res.render('register', {title: 'Congrats! Registration has been completed'});
+});
 module.exports = router;

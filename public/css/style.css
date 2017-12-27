@@ -40,3 +40,30 @@
 .submit:hover{
   box-shadow: 0 0.813em 1em 0 rgba(0,0,0,0.24),0 1em 5em 0 rgba(0,0,0,0.19);
 }
+
+/********************/
+/*Registration Page*/
+/******************/
+
+.register-form{
+  max-width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.header-register{
+  text-align: center;
+  color: #008080;
+}
+.form-group{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-group input, label{
+  font-size: 1em;
+  height: auto;
+  padding: 0.813em;
+  display: block;
+  margin: 0.813em;
+}
