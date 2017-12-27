@@ -2,8 +2,10 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const exphbs = require('express-handlebars');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator'); //to validate input fields if they are empty on the backend side
+
 
 const routes = require('./routes/index');
 
@@ -15,6 +17,9 @@ app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(expressValidator()); //This line must be immediately after any of the bodyParser middlewares!
+
 app.use(cookieParser());
 
 app.engine('hbs', exphbs({
