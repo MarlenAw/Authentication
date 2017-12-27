@@ -1,6 +1,9 @@
 body{
     background-color: #525252;
 }
+.panel{
+  padding: 1em;
+}
 .panel-title{
   color: #008080;
 }
