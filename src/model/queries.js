@@ -17,4 +17,14 @@ const addUser = (username, email, password, cb) => {
   })
 }
 
-module.exports = {addUser}
+const checkUserIfLoggedIn = (cb) => {
+  connect.query(`SELECT MAX(ID) AS user_id FROM users`, (err, results) => {
+    if(err){
+      console.log("Something went wrong with checkUserIfLoggedIn query");
+    }else{
+      cb(null, results);
+    }
+  })
+}
+
+module.exports = {addUser, checkUserIfLoggedIn}

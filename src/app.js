@@ -41,9 +41,12 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   // cookie: {secure: true}
 }));
+//make sure our passport integrates with express session
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 console.log('app.js after controllers');
