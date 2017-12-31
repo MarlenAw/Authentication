@@ -6,6 +6,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator'); //to validate input fields if they are empty on the backend side
 
+//Authentication Packages
+const session = require('express-session');
+const passport = require('passport');
+
 
 const routes = require('./routes/index');
 
@@ -33,6 +37,14 @@ app.engine('hbs', exphbs({
 app.set('port', process.env.PORT || 3002);
 app.use(favicon(path.join(__dirname, '..', 'public', '/assets/favicon.ico')));
 app.use(express.static(path.join(__dirname, '..', 'public')));
+
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
+  // cookie: {secure: true}
+}));
+
 app.use(routes);
 console.log('app.js after controllers');
 module.exports = app;
