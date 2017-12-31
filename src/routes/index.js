@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const expressValidator = require('express-validator');
-const {addUser} = require('../model/queries');
+const passport = require('passport');
+
+const {addUser, checkUserIfLoggedIn} = require('../model/queries');
 
 // GET home page
 router.get('/', (req, res, next) => {
+  console.log(req.user);
+  console.log(req.isAuthenticated());
   res.render('home', {title: 'Let me in!'});
 });
 
@@ -36,22 +40,40 @@ router.post('/register', (req, res, next) => {
     const errors = req.validationErrors();
 
     if(errors){
+
       console.log(`errors: ${JSON.stringify(errors)}`);
       res.render('register', {title: 'Registration Error', errors: errors});
+
     }else{
+
       const {username, email, password} = req.body;
 
       addUser(username, email, password, (err, results) => {
         if (err) {
+
           console.log("User couldn't be added", err);
+
         }else{
+
           console.log("User has been successfully added!");
-          res.render('login', {title: "Login To Your Account"})
+
+          checkUserIfLoggedIn((err, results) => {
+            const user_id = results;
+            req.login(user_id, (erroor) => {
+              res.redirect('/');
+            });
+          });
         }
       });
     }
+});
 
+passport.serializeUser((user_id, done) => {
+  done(null, user_id);
+});
 
+passport.deserializeUser((user_id, done) => {
+  done(null, user_id);
 });
 
 
