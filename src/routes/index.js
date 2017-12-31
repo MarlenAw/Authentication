@@ -8,6 +8,14 @@ router.get('/', (req, res, next) => {
   res.render('home', {title: 'Let me in!'});
 });
 
+router.get('/login', (req, res, next) => {
+  res.render('login', {title: 'Let me in!'});
+});
+
+router.get('/profile', (req, res, next) => {
+  res.render('profile', {title: 'Let me in!'});
+});
+
 router.get('/registration', (req, res, next) => {
   res.render('register', {title: 'Create an Account'});
 });
@@ -38,7 +46,7 @@ router.post('/register', (req, res, next) => {
           console.log("User couldn't be added", err);
         }else{
           console.log("User has been successfully added!");
-          res.render('home', {title: "Login To Your Account"})
+          res.render('login', {title: "Login To Your Account"})
         }
       });
     }
