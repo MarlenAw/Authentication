@@ -9,6 +9,22 @@ const expressValidator = require('express-validator'); //to validate input field
 //Authentication Packages
 const session = require('express-session');
 const passport = require('passport');
+const KnexSessionStore = require('connect-session-knex')(session);
+const Knex = require('knex');
+const knex = Knex({
+    client: 'pg',
+    connection: {
+        host: '127.0.0.1',
+        user: 'auth',
+        password: 'mypassword',
+        database: 'marlenauth'
+    }
+});
+
+const store = new KnexSessionStore({
+    knex: knex,
+    tablename: 'sessions' // optional. Defaults to 'sessions'
+});
 
 
 const routes = require('./routes/index');
@@ -40,10 +56,16 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(session({
   secret: process.env.SECRET,
+  cookie: {
+        maxAge: 86400000  // one day
+    },
+  store: store,
   resave: false,
   saveUninitialized: false,
   // cookie: {secure: true}
 }));
+
+
 //make sure our passport integrates with express session
 app.use(passport.initialize());
 app.use(passport.session());
