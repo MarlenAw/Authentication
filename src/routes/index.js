@@ -16,7 +16,7 @@ router.get('/login', (req, res, next) => {
   res.render('login', {title: 'Let me in!'});
 });
 
-router.get('/profile', (req, res, next) => {
+router.get('/profile', authenticationMiddleWare(), (req, res, next) => {
   res.render('profile', {title: 'Let me in!'});
 });
 
@@ -76,6 +76,17 @@ passport.deserializeUser((user_id, done) => {
   done(null, user_id);
 });
 
+function authenticationMiddleWare(){
+  return (req, res, next) => {
+    console.log(`req.session.passport.user: ${JSON.stringify(req.session.passport)}`);
+
+    if(req.isAuthenticated()){
+      return next();
+    }else{
+      res.redirect('/login');
+    }
+  }
+}
 
 
 module.exports = router;
