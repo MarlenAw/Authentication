@@ -1,2 +1,2 @@
 # Authentication
-Real-Life Authentication App
+Real-Life Authentication App using Handelbars, Bootstrap, Express, Passport and PostrgreSQL 
