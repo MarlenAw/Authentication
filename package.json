@@ -21,7 +21,7 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
-    "knex": "^0.14.2",
+    "knex": "^0.19.5",
     "passport": "^0.4.0",
     "pg": "^7.4.0",
     "serve-favicon": "^2.4.5"
