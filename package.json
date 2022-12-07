@@ -17,7 +17,7 @@
     "connect-session-knex": "^1.4.0",
     "cookie-parser": "^1.4.3",
     "env2": "^2.2.0",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
